@@ -20,15 +20,9 @@ public class UIManager : MonoBehaviour
     }
 
     [SerializeField] private Text catCountText;
-    [SerializeField] private Text countdownText;
 
     public void UpdateCatCountText(int newValue)
     {
         catCountText.text = newValue.ToString() + "/" + GameManager.MyInstance.catCountGoal.ToString();
-    }
-
-    public void UpdateCountdownText(float newValue)
-    {
-        countdownText.text = newValue.ToString();
     }
 }
