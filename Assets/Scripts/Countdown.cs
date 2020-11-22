@@ -16,6 +16,7 @@ public class Countdown : MonoBehaviour
 
     private void Start()
     {
+        GameManager.MyInstance.timeIsOver = false;
         currentTime = GameManager.MyInstance.maxTime;
         minutesText.text = currentTime.ToString();
         secondsText.text = seconds100Text.text = "00";
@@ -58,5 +59,6 @@ public class Countdown : MonoBehaviour
     private void StopCountdown()
     {
         minutesText.text = secondsText.text = seconds100Text.text = "00";
+        GameManager.MyInstance.timeIsOver = true;
     }
 }
