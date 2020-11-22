@@ -25,5 +25,12 @@ public class LevelManager : MonoBehaviour
     {
         public int goal;
         public float timeInSeconds;
+        public CatPositions[] catPositions;
+    }
+
+    [System.Serializable]
+    public class CatPositions
+    {
+        public Vector3 position;
     }
 }
