@@ -54,10 +54,16 @@ public class Countdown : MonoBehaviour
 
     public void StartCountdown()
     {
-        //GameManager.MyInstance.timeIsOver = false;
         currentTime = GameManager.MyInstance.maxTime;
+
         minutesText.text = currentTime.ToString();
         secondsText.text = seconds100Text.text = "00";
+        minutesText.color = secondsText.color = seconds100Text.color = Color.yellow;
+        foreach (Text separator in separators)
+        {
+            separator.color = Color.yellow;
+        }
+
         isRunning = true;
     }
 

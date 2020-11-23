@@ -20,12 +20,19 @@ public class UIManager : MonoBehaviour
     }
 
     [SerializeField] private Text catCountText;
+    [SerializeField] private Text levelText;
     [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private GameObject victoryPanel;
+    [SerializeField] private GameObject endPanel;
 
     public void UpdateCatCountText(int newValue)
     {
         catCountText.text = newValue.ToString() + "/" + GameManager.MyInstance.catCountGoal.ToString();
+    }
+
+    public void UpdateLevelText(int newValue)
+    {
+        levelText.text = "Level " + newValue.ToString();
     }
 
     public IEnumerator ShowGameOver()
@@ -50,5 +57,12 @@ public class UIManager : MonoBehaviour
     public void CloseVictory()
     {
         victoryPanel.SetActive(false);
+    }
+
+    public IEnumerator ShowEndPanel()
+    {
+        yield return new WaitForSeconds(2f);
+        endPanel.SetActive(true);
+        Time.timeScale = 0f;
     }
 }

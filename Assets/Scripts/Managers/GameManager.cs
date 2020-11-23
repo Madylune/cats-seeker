@@ -31,10 +31,13 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        Time.timeScale = 1f;
+
         catCountGoal = LevelManager.MyInstance.levels[currentLevelIndex].goal;
         maxTime = LevelManager.MyInstance.levels[currentLevelIndex].timeInSeconds;
 
         UIManager.MyInstance.UpdateCatCountText(catCount);
+        UIManager.MyInstance.UpdateLevelText(currentLevelIndex + 1);
     }
 
     private void Start()
@@ -59,8 +62,16 @@ public class GameManager : MonoBehaviour
 
         if (catCount >= catCountGoal)
         {
-            StartCoroutine(UIManager.MyInstance.ShowVictory());
-            timeIsOver = false;
+            if (currentLevelIndex + 1 < LevelManager.MyInstance.levels.Length)
+            {
+                StartCoroutine(UIManager.MyInstance.ShowVictory());
+                timeIsOver = false;
+            }
+            else
+            {
+                StartCoroutine(UIManager.MyInstance.ShowEndPanel());
+                timeIsOver = false;
+            }
         }
     }
 
@@ -88,8 +99,14 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
         UIManager.MyInstance.CloseVictory();
         UIManager.MyInstance.UpdateCatCountText(catCount);
+        UIManager.MyInstance.UpdateLevelText(currentLevelIndex + 1);
 
         countdown.StartCountdown();
         StartCoroutine(catManager.SpawnCats());
+    }
+
+    public void BackToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }
