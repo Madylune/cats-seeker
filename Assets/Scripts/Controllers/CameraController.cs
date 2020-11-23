@@ -11,12 +11,17 @@ public class CameraController : MonoBehaviour
     public int minZoom = 2;
     public int maxZoom = 10;
 
+    public float speedH = 2.0f;
+    public float speedV = 2.0f;
+
     public float pitch = 2f;
 
     public float yawSpeed = 100f;
 
     private float currentZoom = 8f;
     private float currentYaw = 0f;
+
+    public float RotationsSpeed = 5.0f;
 
     private void Update()
     {
@@ -28,6 +33,13 @@ public class CameraController : MonoBehaviour
 
     void LateUpdate()
     {
+        if (Input.GetMouseButton(1))
+        {
+            Quaternion camTurnAngle = Quaternion.AngleAxis(Input.GetAxis("Mouse X") * RotationsSpeed, Vector3.up);
+
+            offset = camTurnAngle * offset;
+        }
+
         transform.position = player.position - offset * currentZoom;
         transform.LookAt(player.position + Vector3.up * pitch);
 

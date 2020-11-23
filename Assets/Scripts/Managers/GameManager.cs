@@ -39,6 +39,11 @@ public class GameManager : MonoBehaviour
         {
             StartCoroutine(UIManager.MyInstance.ShowGameOver());
         }
+
+        if (catCount >= catCountGoal)
+        {
+            StartCoroutine(UIManager.MyInstance.ShowVictory());
+        }
     }
 
     public void UpdateCatCount()
@@ -52,5 +57,12 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
         int sceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(sceneIndex);
+    }
+
+    public void NextLevel()
+    {
+        currentLevelIndex++;
+        catCountGoal = LevelManager.MyInstance.levels[currentLevelIndex].goal;
+        maxTime = LevelManager.MyInstance.levels[currentLevelIndex].timeInSeconds;
     }
 }

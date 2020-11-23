@@ -21,6 +21,7 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private Text catCountText;
     [SerializeField] private GameObject gameOverPanel;
+    [SerializeField] private GameObject victoryPanel;
 
     public void UpdateCatCountText(int newValue)
     {
@@ -31,6 +32,13 @@ public class UIManager : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         gameOverPanel.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    public IEnumerator ShowVictory()
+    {
+        yield return new WaitForSeconds(2f);
+        victoryPanel.SetActive(true);
         Time.timeScale = 0f;
     }
 }
