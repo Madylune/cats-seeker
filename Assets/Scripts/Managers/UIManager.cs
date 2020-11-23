@@ -35,10 +35,20 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 0f;
     }
 
+    public void CloseGameOver()
+    {
+        gameOverPanel.SetActive(false);
+    }
+
     public IEnumerator ShowVictory()
     {
         yield return new WaitForSeconds(2f);
         victoryPanel.SetActive(true);
         Time.timeScale = 0f;
+    }
+
+    public void CloseVictory()
+    {
+        victoryPanel.SetActive(false);
     }
 }

@@ -25,6 +25,10 @@ public class GameManager : MonoBehaviour
     public float maxTime;
     public bool timeIsOver;
 
+    [SerializeField] private Countdown countdown;
+
+    private CatManager catManager;
+
     private void Awake()
     {
         catCountGoal = LevelManager.MyInstance.levels[currentLevelIndex].goal;
@@ -33,16 +37,18 @@ public class GameManager : MonoBehaviour
         UIManager.MyInstance.UpdateCatCountText(catCount);
     }
 
+    private void Start()
+    {
+        catManager = GetComponent<CatManager>();
+        timeIsOver = false;
+    }
+
     private void Update()
     {
         if (timeIsOver && catCount < catCountGoal)
         {
             StartCoroutine(UIManager.MyInstance.ShowGameOver());
-        }
-
-        if (catCount >= catCountGoal)
-        {
-            StartCoroutine(UIManager.MyInstance.ShowVictory());
+            timeIsOver = false;
         }
     }
 
@@ -50,19 +56,40 @@ public class GameManager : MonoBehaviour
     {
         catCount++;
         UIManager.MyInstance.UpdateCatCountText(catCount);
+
+        if (catCount >= catCountGoal)
+        {
+            StartCoroutine(UIManager.MyInstance.ShowVictory());
+            timeIsOver = false;
+        }
     }
 
     public void RestartGame()
     {
+        catCount = 0;
+
         Time.timeScale = 1f;
-        int sceneIndex = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(sceneIndex);
+        UIManager.MyInstance.CloseGameOver();
+        UIManager.MyInstance.UpdateCatCountText(catCount);
+
+        countdown.StartCountdown();
+
+        catManager.ResetCats();
+        StartCoroutine(catManager.SpawnCats());
     }
 
     public void NextLevel()
     {
         currentLevelIndex++;
+        catCount = 0;
         catCountGoal = LevelManager.MyInstance.levels[currentLevelIndex].goal;
         maxTime = LevelManager.MyInstance.levels[currentLevelIndex].timeInSeconds;
+
+        Time.timeScale = 1f;
+        UIManager.MyInstance.CloseVictory();
+        UIManager.MyInstance.UpdateCatCountText(catCount);
+
+        countdown.StartCountdown();
+        StartCoroutine(catManager.SpawnCats());
     }
 }
