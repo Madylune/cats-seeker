@@ -24,6 +24,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private GameObject victoryPanel;
     [SerializeField] private GameObject endPanel;
+    [SerializeField] private GameObject pausePanel;
 
     public void UpdateCatCountText(int newValue)
     {
@@ -64,5 +65,19 @@ public class UIManager : MonoBehaviour
         yield return new WaitForSeconds(2f);
         endPanel.SetActive(true);
         Time.timeScale = 0f;
+    }
+
+    public void TogglePauseMenu()
+    {
+        if (pausePanel.activeSelf)
+        {
+            pausePanel.SetActive(false);
+            Time.timeScale = 1f;
+        }
+        else
+        {
+            pausePanel.SetActive(true);
+            Time.timeScale = 0f;
+        }
     }
 }

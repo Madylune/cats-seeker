@@ -53,6 +53,11 @@ public class GameManager : MonoBehaviour
             StartCoroutine(UIManager.MyInstance.ShowGameOver());
             timeIsOver = false;
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            UIManager.MyInstance.TogglePauseMenu();
+        }
     }
 
     public void UpdateCatCount()
