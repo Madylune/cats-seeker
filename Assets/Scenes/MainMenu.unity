@@ -121,6 +121,87 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &27422872
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 27422873}
+  - component: {fileID: 27422875}
+  - component: {fileID: 27422874}
+  m_Layer: 5
+  m_Name: Content
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &27422873
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27422872}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 470360892}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 373, y: -48.829}
+  m_SizeDelta: {x: 660.7494, y: 706.1252}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &27422874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27422872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 81ccd59e82dfa6b4b9cbd1f07d0c04c1, type: 3}
+    m_FontSize: 35
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 3
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "CONTROLS\n\n\u25B6 Zoom [mouse wheel]\n\n\u25B6 Camera rotation [hold
+    left click]\n\n\u25B6 Move up [ W ] or [ \u21E7]\n\n\u25B6 Move down [ S ] or
+    [ \u21E9]\n\n\u25B6 Move left [ A ] or [ \u21E6]\n\n\u25B6 Move right [ D ] or
+    [ \u21E8]\n\n\u25B6 Jump [ SPACE ]"
+--- !u!222 &27422875
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27422872}
+  m_CullTransparentMesh: 0
 --- !u!1 &29913717
 GameObject:
   m_ObjectHideFlags: 0
@@ -391,8 +472,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000012398, y: -41.9}
-  m_SizeDelta: {x: 1321.4987, y: 564.16046}
+  m_AnchoredPosition: {x: -374, y: -51.171}
+  m_SizeDelta: {x: 660.7494, y: 706.1252}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &129462302
 MonoBehaviour:
@@ -426,11 +507,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u25B6 You're a volunteer in an association for the rescue of abandoned
-    cats\n\n\u25B6 Your mission is to find cats in the city\n\n\u25B6 You've to complete
-    the goal within a limited time\n\n\u25B6 You can move with directional arrows
-    or A D S W keys\n\n\u25B6 Handle camera zoom with the mouse wheel\n\n\u25B6 Hold
-    left click to rotate camera"
+  m_Text: "RULES\n\n\u25B6 You're a volunteer in an association for the rescue of
+    abandoned cats\n\n\u25B6 Your mission is to find cats in the city\n\n\u25B6 You've
+    to complete the goal within a limited time"
 --- !u!222 &129462303
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -537,6 +616,7 @@ RectTransform:
   - {fileID: 1227431159}
   - {fileID: 128558885}
   - {fileID: 129462301}
+  - {fileID: 27422873}
   m_Father: {fileID: 886688365}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
