@@ -31,4 +31,9 @@ public class MainMenu : MonoBehaviour
     {
         controlsPanel.SetActive(false);
     }
+
+    public void ClickCreditLink(string url)
+    {
+        Application.OpenURL(url);
+    }
 }
