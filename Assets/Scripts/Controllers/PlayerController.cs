@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(collision.gameObject);
             GameManager.MyInstance.UpdateCatCount();
-            SoundManager.MyInstance.MeowSound();
+            SoundManager.MyInstance.Play("Catch");
         }
     }
 }
