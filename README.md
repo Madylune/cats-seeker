@@ -19,7 +19,7 @@ You have to complete the level's goal within a limited time.
 - Move right [ D ] or [ ⇨]
 - Jump [ SPACE ]
 
-## Releases
+## Change log
 ### V1.0
 - Player movement (run and jump)
 - Handle camera zoom with mouse wheel
