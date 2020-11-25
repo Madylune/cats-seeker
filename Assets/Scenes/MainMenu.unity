@@ -191,7 +191,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "CONTROLS\n\n\u25B6 Zoom [mouse wheel]\n\n\u25B6 Camera rotation [hold
-    left click]\n\n\u25B6 Move up [ W ] or [ \u21E7]\n\n\u25B6 Move down [ S ] or
+    right click]\n\n\u25B6 Move up [ W ] or [ \u21E7]\n\n\u25B6 Move down [ S ] or
     [ \u21E9]\n\n\u25B6 Move left [ A ] or [ \u21E6]\n\n\u25B6 Move right [ D ] or
     [ \u21E8]\n\n\u25B6 Jump [ SPACE ]"
 --- !u!222 &27422875

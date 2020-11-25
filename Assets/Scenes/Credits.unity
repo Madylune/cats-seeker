@@ -1006,7 +1006,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'FREE ASSETS FROM:'
+  m_Text: 'ASSETS FROM:'
 --- !u!222 &1032239629
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1786,7 +1786,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'FREE SOUNDS FROM:'
+  m_Text: 'MUSICS & SOUNDS FROM:'
 --- !u!222 &1962549094
 CanvasRenderer:
   m_ObjectHideFlags: 0
